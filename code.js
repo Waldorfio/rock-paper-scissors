@@ -1,9 +1,12 @@
 
-arr = ['Rock', 'Paper', 'Scissors'];
-let handIn = prompt("Please enter Rock, Paper or Scissors")
+arr = ['ROCK', 'PAPER', 'SCISSORS'];
+let handIn = prompt("Please enter Rock, Paper or Scissors").toUpperCase();
 let winMsg = 'You Win!';
 let loseMsg = 'You Lose!';
 let drawMsg = 'Draw...';
+
+
+if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
 
 function computerPlay() {
     let handOut = arr[Math.floor((Math.random() * 3))]
@@ -14,18 +17,16 @@ function testResult(a, b) {
     handIn = a;
     handOut = b;
 
-    if (handIn == 'Rock' && handOut == 'Scissors') {msg = winMsg};
-    if (handIn == 'Rock' && handOut == 'Paper') {msg = loseMsg};
-    if (handIn == 'Rock' && handOut == 'Rock') {msg = drawMsg};
+    if (handIn == handOut ) {msg = drawMsg};
 
-    if (handIn == 'Paper' && handOut == 'Scissors') {msg = loseMsg};
-    if (handIn == 'Paper' && handOut == 'Paper') {msg = drawMsg};
-    if (handIn == 'Paper' && handOut == 'Rock') {msg = winMsg};
+    if (handIn == 'ROCK' && handOut == 'SCISSORS') {msg = winMsg};
+    if (handIn == 'ROCK' && handOut == 'PAPER') {msg = loseMsg};
 
-    if (handIn == 'Scissors' && handOut == 'Scissors') {msg = drawMsg};
-    if (handIn == 'Scissors' && handOut == 'Paper') {msg = winMsg};
-    if (handIn == 'Scissors' && handOut == 'Rock') {msg = loseMsg};
+    if (handIn == 'PAPER' && handOut == 'SCISSORS') {msg = loseMsg};
+    if (handIn == 'PAPER' && handOut == 'ROCK') {msg = winMsg};
 
+    if (handIn == 'SCISSORS' && handOut == 'PAPER') {msg = winMsg};
+    if (handIn == 'SCISSORS' && handOut == 'ROCK') {msg = loseMsg};
     return msg;
 }
 
