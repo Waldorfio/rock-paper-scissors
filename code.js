@@ -1,6 +1,6 @@
 
 arr = ['ROCK', 'PAPER', 'SCISSORS'];
-let handIn = prompt("Please enter Rock, Paper or Scissors").toUpperCase();
+
 let winMsg = 'You Win!';
 let loseMsg = 'You Lose!';
 let drawMsg = 'Draw...';
@@ -30,8 +30,8 @@ function testResult(a, b) {
     return msg;
 }
 
-function playRound(a) {
-    handIn = a;
+function playRound() {
+    let handIn = prompt("Please enter Rock, Paper or Scissors").toUpperCase();
     handOut = computerPlay();
     result = testResult(handIn, handOut);
     alert(result);
