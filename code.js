@@ -5,7 +5,6 @@ let winMsg = 'You Win!';
 let loseMsg = 'You Lose!';
 let drawMsg = 'Draw...';
 
-
 if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
 
 function computerPlay() {
@@ -19,14 +18,14 @@ function testResult(a, b) {
 
     if (handIn == handOut ) {msg = drawMsg};
 
-    if (handIn == 'ROCK' && handOut == 'SCISSORS') {msg = winMsg};
-    if (handIn == 'ROCK' && handOut == 'PAPER') {msg = loseMsg};
+    if (handIn == arr[0] && handOut == arr[2]) {msg = winMsg};
+    if (handIn == arr[0] && handOut == arr[1]) {msg = loseMsg};
 
-    if (handIn == 'PAPER' && handOut == 'SCISSORS') {msg = loseMsg};
-    if (handIn == 'PAPER' && handOut == 'ROCK') {msg = winMsg};
+    if (handIn == arr[1] && handOut == arr[2]) {msg = loseMsg};
+    if (handIn == arr[1] && handOut == arr[0]) {msg = winMsg};
 
-    if (handIn == 'SCISSORS' && handOut == 'PAPER') {msg = winMsg};
-    if (handIn == 'SCISSORS' && handOut == 'ROCK') {msg = loseMsg};
+    if (handIn == arr[2] && handOut == arr[1]) {msg = winMsg};
+    if (handIn == arr[2] && handOut == arr[0]) {msg = loseMsg};
     return msg;
 }
 
