@@ -1,4 +1,3 @@
-
 arr = ['ROCK', 'PAPER', 'SCISSORS'];
 
 let winMsg = 'You Win!';
@@ -6,6 +5,19 @@ let loseMsg = 'You Lose!';
 let drawMsg = 'Draw...';
 
 if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
+
+
+btnRock.addEventListener('click', clickFunction);
+btnPaper.addEventListener('click', clickFunction);
+btnScissors.addEventListener('click', clickFunction);
+
+function clickFunction {
+    ???.style = 
+}
+
+
+
+
 
 function computerPlay() {
     let handOut = arr[Math.floor((Math.random() * 3))]
