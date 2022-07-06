@@ -1,3 +1,4 @@
 # rock-paper-scissors
-This is a JavaScript based rock, paper, scissors game, played directly in your browser.
-Built using JavaScript and HTML, styled using CSS.
+
+An interactive Rock, Paper, Scissors game built using JavaScript.
+Website built using HTML and styled with CSS.
