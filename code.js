@@ -4,14 +4,10 @@ const winMsg = 'You Win!';
 const loseMsg = 'You Lose!';
 const drawMsg = 'Draw...';
 
-
-btnRock.addEventListener('click', clickFunction());
-btnPaper.addEventListener('click', clickFunction());
-btnScissors.addEventListener('click', clickFunction());
-
-function clickFunction(itemInput) {
-    playRound(itemInput);
-}
+// Adding the Event Listeners to the buttons
+btnRock.addEventListener('click', () => playRound('ROCK'));
+btnPaper.addEventListener('click', () => playRound('PAPER'));
+btnScissors.addEventListener('click', () => playRound('SCISSORS'));
 
 function computerPlay() {
     const handOut = arr[Math.floor((Math.random() * 3))]
@@ -37,10 +33,10 @@ function testResult(a, b) {
 
 function playRound(itemInput) {
     console.log(itemInput);
-    let handIn = itemInput;
+    handIn = itemInput;
     handIn = handIn.toUpperCase();
     if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
-    const handOut = computerPlay();
-    const result = testResult(handIn, handOut);
+    handOut = computerPlay();
+    result = testResult(handIn, handOut);
     alert(result);
 }
