@@ -4,11 +4,6 @@ const winMsg = 'You Win!';
 const loseMsg = 'You Lose!';
 const drawMsg = 'Draw...';
 
-// Adding the Event Listeners to the buttons
-btnRock.addEventListener('click', () => playRound('ROCK'));
-btnPaper.addEventListener('click', () => playRound('PAPER'));
-btnScissors.addEventListener('click', () => playRound('SCISSORS'));
-
 function computerPlay() {
     const handOut = arr[Math.floor((Math.random() * 3))]
     return handOut;
@@ -32,11 +27,16 @@ function testResult(a, b) {
 }
 
 function playRound(itemInput) {
-    console.log(itemInput);
+    // console.log(itemInput);
     handIn = itemInput;
     handIn = handIn.toUpperCase();
     if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
     handOut = computerPlay();
     result = testResult(handIn, handOut);
-    alert(result);
+    document.getElementById('results').innerHTML = result;
 }
+
+// Adding the Event Listeners to the buttons
+btnRock.addEventListener('click', () => playRound('ROCK'));
+btnPaper.addEventListener('click', () => playRound('PAPER'));
+btnScissors.addEventListener('click', () => playRound('SCISSORS'));
