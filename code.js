@@ -1,20 +1,18 @@
+const arr = ['ROCK', 'PAPER', 'SCISSORS'];
 
-arr = ['ROCK', 'PAPER', 'SCISSORS'];
-
-let winMsg = 'You Win!';
-let loseMsg = 'You Lose!';
-let drawMsg = 'Draw...';
-
-if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
+const winMsg = 'You Win!';
+const loseMsg = 'You Lose!';
+const drawMsg = 'Draw...';
+let score = 0;
 
 function computerPlay() {
-    let handOut = arr[Math.floor((Math.random() * 3))]
+    const handOut = arr[Math.floor((Math.random() * 3))]
     return handOut;
 }
 
 function testResult(a, b) {
-    handIn = a;
-    handOut = b;
+    const handIn = a;
+    const handOut = b;
 
     if (handIn == handOut ) {msg = drawMsg};
 
@@ -29,11 +27,27 @@ function testResult(a, b) {
     return msg;
 }
 
-function playRound() {
-    let handIn = prompt("Please enter Rock, Paper or Scissors").toUpperCase();
+function playRound(itemInput) {
+    // console.log(itemInput);
+    handIn = itemInput;
+    handIn = handIn.toUpperCase();
+    if (handIn != 'ROCK' && handIn != 'PAPER' && handIn != 'SCISSORS') {throw new Error('Invalid input!')};
     handOut = computerPlay();
     result = testResult(handIn, handOut);
-    alert(result);
+    
+    document.getElementById('score').innerHTML = 'Score: ' + score;  // appending results to DOM
+
+    //Running Score
+    if (result = 'You Win!') {score = score + 1};
+    if (score == 5) {'GAME OVER! YOU WIN'};
+    document.getElementById('score').innerHTML = 'Score: ' + score;    // apppending score to DOM
+    if (score == 5) {
+        document.getElementById('results').innerHTML = '';
+        document.getElementById('score').innerHTML = 'GAME OVER... YOU WIN!';
+    };
 }
 
-playRound(handIn);
+// Adding the Event Listeners to the buttons
+btnRock.addEventListener('click', () => playRound('ROCK'));
+btnPaper.addEventListener('click', () => playRound('PAPER'));
+btnScissors.addEventListener('click', () => playRound('SCISSORS'));
