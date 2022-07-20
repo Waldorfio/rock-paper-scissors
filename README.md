@@ -1,4 +1,4 @@
-# rock-paper-scissors
+# Project: Interactive Rock, Paper, Scissors Website
 
 An interactive Rock, Paper, Scissors game built using JavaScript.
 Website built using HTML and styled with CSS.
